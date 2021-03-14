@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import './App.css';
 import Recipe from './Recipe';
 import style from './recipes.module.css';
+import Footers from './Footer'
 
 const App = () => {
 
@@ -36,7 +37,7 @@ const getSearch = e =>{
 
   return (
     <div className="App">
-      <h1 className={style.recipe}>Perfect Recipes For Everyone!</h1>
+      <h1 className={style.recipe}>Perfect Recipes For Everyone!<br/><br/><br/><br/> </h1>
      <form onSubmit={getSearch} className="search-form">
        <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
        <button 
@@ -52,7 +53,9 @@ const getSearch = e =>{
        image={recipe.recipe.image}
        ingredients={recipe.recipe.ingredients} />
      ))}
-     </div>
+
+     </div> 
+     <Footers/>
     </div>
   );
 };
